@@ -1,5 +1,6 @@
 (() => {
-  const loadGallery = async (author) => {
+  const loadGallery = async () => {
+    const author =  window.location.hash.substr(1);
     const photosData = await photoService.fetchPhotos({author});
     const galleryHTML = Gallery.create({photosData,onAuthorSelect});
     const containerEl = document.getElementById('app-container');
@@ -11,9 +12,11 @@
     if (e.target && e.target.classList.contains('author-link')) {
         e.stopPropagation();
         const authorId = e.target.id;
-        loadGallery(authorId);
+        window.location.hash = `${ authorId }`;
     }
   };
 
   loadGallery();
+  window.onhashchange = loadGallery; 
+
 })(photoService)

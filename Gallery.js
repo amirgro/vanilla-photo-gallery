@@ -1,6 +1,5 @@
 const PhotoItem = {
-  create: ({photoData, onAuthorSelect}) => {
-    const { link, author, author_id, date, title, thumbnail } = photoData;
+  create: ({ link, author, author_id, date, title, thumbnail }) => {
     return `<div class="photo">
               <a target="_blank" href="${ link }">
                 <img src="${ thumbnail }" alt="${ title }">
@@ -14,9 +13,9 @@ const PhotoItem = {
 }
 
 const Gallery = {
-  create: ({photosData, onAuthorSelect}) => {
+  create: ({photosData}) => {
     return `<section class="gallery">
-            ${ photosData.map(photoData => PhotoItem.create({photoData, onAuthorSelect})).join('') }
+              ${ photosData.map(photoData => PhotoItem.create(photoData)).join('') }
             </section>`;
   }
 }
