@@ -7,7 +7,7 @@ const PhotoItem = {
               </a>
               <div class="desc">${ title }</div>
               <div class="desc-date">${ new Date(date_taken).toISOString().slice(0,10) }</div>
-              <div onclick="onAuthorSelect()" class="author-link">${ author }</div>
+              <div id="${ author_id }" class="author-link">${ author }</div>
             </div>
           `;
   }
