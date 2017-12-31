@@ -1,22 +1,38 @@
-.test {
+.gallery {
   display: flex;
   flex-wrap: wrap;
 }
-div.gallery {
+
+div.photo {
     margin: 5px;
     border: 1px solid #ccc;
     width: 180px;
 }
 
-div.gallery:hover {
+div.photo:hover {
     border: 1px solid #777;
 }
 
-div.gallery img {
+div.photo img {
     width: 100%;
     height: auto;
 }
 
 .app-container {
     text-align: center;
+}
+
+.author-link {
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+}
+
+.desc-date {
+    font-size: 12px;
+}
+
+.author-link:hover {
+    text-decoration:none;
+     text-shadow: 1px 1px 1px #555;
 }
