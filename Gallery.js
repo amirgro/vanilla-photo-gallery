@@ -1,12 +1,12 @@
 const PhotoItem = {
   create: ({photoData, onAuthorSelect}) => {
-    const { link, author, author_id, date_taken, title, media } = photoData;
+    const { link, author, author_id, date, title, thumbnail } = photoData;
     return `<div class="photo">
               <a target="_blank" href="${ link }">
-                <img src="${ media.m }" alt="${ title }" width="600" height="400">
+                <img src="${ thumbnail }" alt="${ title }">
               </a>
               <div class="desc">${ title }</div>
-              <div class="desc-date">${ new Date(date_taken).toISOString().slice(0,10) }</div>
+              <div class="desc-date">${ date }</div>
               <div id="${ author_id }" class="author-link">${ author }</div>
             </div>
           `;

@@ -5,6 +5,10 @@ const photoService = {
     const result = await fetchJSONP(url);
     const { items } = await result.json();
     console.log(items);
-    return items;
+    return items.map(({ link, author, author_id, date_taken, title, media }) => {
+      return {
+        link, author, author_id, date: new Date(date_taken).toISOString().slice(0,10), title, thumbnail: media.m
+      }
+    });
   }
 }
