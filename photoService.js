@@ -1,3 +1,7 @@
+/*
+* A service component for integration with the flickr API.
+*/
+
 const photoService = {
 
   fetchPhotos: async ({ author }) => {

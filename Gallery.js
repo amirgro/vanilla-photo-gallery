@@ -1,4 +1,8 @@
-const PhotoItem = {
+/*
+* The view components. Generate markup for a photo gallery.
+*/
+
+const photoItem = {
   create: ({ link, author, author_id, date, title, thumbnail }) => {
     return `<div class="photo">
               <a target="_blank" href="${ link }">
@@ -12,10 +16,10 @@ const PhotoItem = {
   }
 }
 
-const Gallery = {
-  create: ({photosData}) => {
+const gallery = {
+  create: ({ photosData }) => {
     return `<section class="gallery">
-              ${ photosData.map(photoData => PhotoItem.create(photoData)).join('') }
+              ${ photosData.map(photoData => photoItem.create(photoData)).join('') }
             </section>`;
   }
 }
