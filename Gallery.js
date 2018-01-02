@@ -8,9 +8,11 @@ const photoItem = {
               <a target="_blank" href="${ link }">
                 <img src="${ thumbnail }" alt="${ title }">
               </a>
-              <div class="desc">${ title }</div>
-              <div class="desc-date">${ date }</div>
-              <div id="${ author_id }" class="author-link">${ author }</div>
+              <div class="desc">
+                <div class="title">${ title }</div>
+                <div class="desc-date">${ date }</div>
+                <div id="${ author_id }" class="author-link">${ author }</div>
+              </div>
             </div>
           `;
   }
