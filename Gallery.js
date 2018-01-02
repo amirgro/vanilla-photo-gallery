@@ -6,7 +6,7 @@ const photoItem = {
   create: ({ link, author, author_id, date, title, thumbnail }) => {
     return `<div class="photo">
               <a target="_blank" href="${ link }">
-                <img src="${ thumbnail }" alt="${ title }">
+                <img class="thumbnail" src="${ thumbnail }" alt="${ title }">
               </a>
               <div class="desc">
                 <div class="title">${ title }</div>
