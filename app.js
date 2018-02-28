@@ -1,11 +1,11 @@
 (() => {
   const loadGallery = async () => {
     const author =  window.location.hash.substr(1);
-    const photosData = await photoService.fetchPhotos({author});
-    const galleryHTML = gallery.create({photosData,onAuthorSelect});
-    const containerEl = document.getElementById('app-container');
-    containerEl.innerHTML = galleryHTML;
-    containerEl.addEventListener('click',onAuthorSelect);
+    // const photosData = await photoService.fetchPhotos({author});
+    // const galleryHTML = gallery.create({photosData,onAuthorSelect});
+    // const containerEl = document.getElementById('app-container');
+    // containerEl.innerHTML = galleryHTML;
+    // containerEl.addEventListener('click',onAuthorSelect);
   };
 
   const onAuthorSelect = (e) => {

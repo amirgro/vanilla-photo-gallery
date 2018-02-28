@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="jsonp.js" defer></script>
   <script src="photoService.js" defer></script>
   <script src="Gallery.js" defer></script>
@@ -10,7 +11,27 @@
 </head>
 
 <body>
-  <div id="app-container">
+  <script>
+    var app = angular.module("app-container", []); 
+    app.controller("galleryCtrl", async function($scope) {
+        const author =  window.location.hash.substr(1);
+        const data = await photoService.fetchPhotos({author});
+        $scope.$apply(() => $scope.photosData = data);
+    });
+  </script>
+  <div ng-app="app-container" ng-controller="galleryCtrl">
+    <section class="gallery">
+       <div class="photo" ng-repeat="item in photosData">
+        <a target="_blank" href="{{item.link}}">
+          <img class="thumbnail" src="{{item.thumbnail}}" alt="{{item.title}}">
+        </a>
+        <div class="desc">
+          <div class="title">{{item.title}}</div>
+          <div class="desc-date">{{item.date}}</div>
+          <div id="{{item.author_id}}" class="author-link">{{item.author}}</div>
+        </div>
+      </div> 
+    </section>
   </div>
 </body>
 
